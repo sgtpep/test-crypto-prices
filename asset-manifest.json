@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/test-crypto-prices/static/js/main.ac4bf637.chunk.js",
+    "main.js.map": "/test-crypto-prices/static/js/main.ac4bf637.chunk.js.map",
+    "runtime-main.js": "/test-crypto-prices/static/js/runtime-main.3f43364f.js",
+    "runtime-main.js.map": "/test-crypto-prices/static/js/runtime-main.3f43364f.js.map",
+    "static/css/2.042623cf.chunk.css": "/test-crypto-prices/static/css/2.042623cf.chunk.css",
+    "static/js/2.a8bb21f5.chunk.js": "/test-crypto-prices/static/js/2.a8bb21f5.chunk.js",
+    "static/js/2.a8bb21f5.chunk.js.map": "/test-crypto-prices/static/js/2.a8bb21f5.chunk.js.map",
+    "static/js/3.243b7485.chunk.js": "/test-crypto-prices/static/js/3.243b7485.chunk.js",
+    "static/js/3.243b7485.chunk.js.map": "/test-crypto-prices/static/js/3.243b7485.chunk.js.map",
+    "static/js/4.40833783.chunk.js": "/test-crypto-prices/static/js/4.40833783.chunk.js",
+    "static/js/4.40833783.chunk.js.map": "/test-crypto-prices/static/js/4.40833783.chunk.js.map",
+    "index.html": "/test-crypto-prices/index.html",
+    "static/css/2.042623cf.chunk.css.map": "/test-crypto-prices/static/css/2.042623cf.chunk.css.map",
+    "static/js/3.243b7485.chunk.js.LICENSE.txt": "/test-crypto-prices/static/js/3.243b7485.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3f43364f.js",
+    "static/js/3.243b7485.chunk.js",
+    "static/js/main.ac4bf637.chunk.js"
+  ]
+}
