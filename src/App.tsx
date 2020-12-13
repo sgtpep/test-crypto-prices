@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { createGlobalStyle } from "styled-components";
 
-import CryptoPrices from "features/crypto-prices/CryptoPrices";
+import Loading from "components/Loading";
 
 const Style = createGlobalStyle`
 body {
@@ -11,11 +11,15 @@ body {
 }
 `;
 
+const CryptoPrices = lazy(() => import("features/crypto-prices/CryptoPrices"));
+
 const App = () => (
   <>
     <Style />
     <h1>Crypto Prices</h1>
-    <CryptoPrices />
+    <Suspense fallback={<Loading />}>
+      <CryptoPrices />
+    </Suspense>
   </>
 );
 

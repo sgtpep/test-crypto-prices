@@ -1,5 +1,7 @@
 import React from "react";
 
+import Loading from "components/Loading";
+
 const indicator = (isLoading?: boolean, error?: string) => {
   if (!isLoading && !error) {
     return null;
@@ -7,7 +9,7 @@ const indicator = (isLoading?: boolean, error?: string) => {
   return (
     <>
       {error && <p>{error}</p>}
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loading />}
     </>
   );
 };
