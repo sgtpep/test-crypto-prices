@@ -1,4 +1,4 @@
-# test-crypto-prices
+# test-crypto-prices ![CI](https://github.com/sgtpep/test-crypto-prices/workflows/CI/badge.svg)
 
 Allows to display prices of up to ten selected cryptos in a table.
 
