@@ -31,11 +31,14 @@ const CryptoPricesDropdown = () => {
     [addedCryptos, data]
   );
 
+  const isDisabled = addedCryptos.length === addedCryptosMaxLength;
+
   return (
     <Select
-      isDisabled={addedCryptos.length === addedCryptosMaxLength}
+      isDisabled={isDisabled}
       onChange={({ value }: Option) => dispatch(addCryptos([value]))}
       options={options}
+      placeholder={isDisabled ? "Can't add more" : undefined}
       value={null}
     />
   );
