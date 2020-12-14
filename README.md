@@ -26,6 +26,7 @@ npm start
 - `components/` — reusable components.
 - `features/` — app code organized in "feature folders", as recommended by `@redux/toolkit`.
 - `helpers/` — reusable functions.
+- `types/` — common types.
 - `App.tsx`, `index.tsx` — entrypoints.
 - `store.ts` — an app store.
 
@@ -33,3 +34,4 @@ npm start
 
 - The app was created from [`redux-typescript`](https://github.com/reduxjs/cra-template-redux-typescript) template.
 - The state management is based on `@react/toolkit` with its concept of state slices.
+- Added nominal types to some primitive values (like ids, amounts, etc.) to distinguish them from basic types. See https://basarat.gitbook.io/typescript/main-1/nominaltyping, https://github.com/Microsoft/TypeScript/issues/202 for details.

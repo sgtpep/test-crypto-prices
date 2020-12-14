@@ -1,6 +1,10 @@
+import Nominal from "types/Nominal";
+
 interface Crypto {
-  cmcRank: number;
+  id: Nominal<number, "Crypto">;
+  name: string;
   priceUSD: number;
+  rank: number;
   symbol: string;
 }
 

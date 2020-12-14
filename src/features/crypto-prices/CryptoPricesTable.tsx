@@ -43,21 +43,23 @@ const CryptoPrices: FC = ({ children }) => {
       <TableHead>
         {children && (
           <tr>
-            <td colSpan={4}>{children}</td>
+            <td colSpan={1000}>{children}</td>
           </tr>
         )}
         <tr>
-          <th className="is-right">CMC Rank</th>
+          <th className="is-right">Rank</th>
           <th>Symbol</th>
+          <th>Name</th>
           <th className="is-right">Price, USD</th>
           <th />
         </tr>
       </TableHead>
       <AnimatedTableBody>
-        {addedCryptos.map(({ cmcRank, priceUSD, symbol }) => (
-          <tr key={symbol}>
-            <td className="is-right">{cmcRank.toLocaleString()}</td>
+        {addedCryptos.map(({ id, name, priceUSD, rank, symbol }) => (
+          <tr key={id}>
+            <td className="is-right">{rank.toLocaleString()}</td>
             <td>{symbol}</td>
+            <td>{name}</td>
             <td className="is-right">
               {priceUSD.toLocaleString(undefined, {
                 currency: "USD",
@@ -67,7 +69,7 @@ const CryptoPrices: FC = ({ children }) => {
             <td>
               <button
                 disabled={addedCryptos.length <= addedCryptosMinLength}
-                onClick={() => dispatch(removeCrypto(symbol))}
+                onClick={() => dispatch(removeCrypto(id))}
               >
                 Remove
               </button>

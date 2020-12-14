@@ -27,25 +27,24 @@ export const fetchCryptos = (): AppThunk => (dispatch, getState) => {
     return;
   }
   interface CoinMarketCapMapResponse {
-    data: {
-      is_active: boolean;
-      symbol: string;
-    }[];
+    data: Pick<Crypto, "id" | "name" | "rank" | "symbol">[];
   }
   return fetchAction<CoinMarketCapMapResponse, State["data"]>(
-    "https://www.stackadapt.com/coinmarketcap/map",
+    "https://www.stackadapt.com/coinmarketcap/map?" +
+      new URLSearchParams({ sort: "cmc_rank" }),
     {
       dispatch,
       getData: ({ data }) =>
         data
-          .filter(({ is_active: isActive }) => isActive)
-          .map(({ symbol }) => ({
-            cmcRank: 0,
+          .map(({ id, name, rank, symbol }) => ({
+            id,
+            name,
             priceUSD: 0,
+            rank,
             symbol,
           }))
-          .sort(({ cmcRank: a }, { cmcRank: b }) => b - a)
-          .sort(({ symbol: a }, { symbol: b }) => a.localeCompare(b)),
+          .sort(({ symbol: a }, { symbol: b }) => a.localeCompare(b))
+          .sort(({ rank: a }, { rank: b }) => a - b),
       setFetchData: setCryptos,
     }
   );

@@ -22,9 +22,9 @@ const CryptoPricesDropdown = () => {
       (data ?? [])
         .filter((crypto) => !addedCryptos.includes(crypto))
         .map((crypto) => {
-          const { symbol } = crypto;
+          const { name, symbol } = crypto;
           return {
-            label: symbol,
+            label: `${name} (${symbol})`,
             value: crypto,
           };
         }),

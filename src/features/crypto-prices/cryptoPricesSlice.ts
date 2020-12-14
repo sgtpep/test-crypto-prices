@@ -18,16 +18,16 @@ export const cryptoPricesSlice = createSlice({
     addCryptos: (state, { payload }: PayloadAction<Crypto[]>) => {
       for (const crypto of payload) {
         if (
-          !state.addedCryptos.some(({ symbol }) => symbol === crypto.symbol)
+          !state.addedCryptos.some(({ id }) => id === crypto.id)
         ) {
           state.addedCryptos.push(crypto);
         }
       }
     },
 
-    removeCrypto: (state, { payload }: PayloadAction<Crypto["symbol"]>) => {
+    removeCrypto: (state, { payload }: PayloadAction<Crypto["id"]>) => {
       const index = state.addedCryptos.findIndex(
-        ({ symbol }) => symbol === payload
+        ({ id }) => id === payload
       );
       if (index !== -1) {
         state.addedCryptos.splice(index, 1);
